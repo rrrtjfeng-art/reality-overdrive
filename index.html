@@ -73,7 +73,7 @@ function gameOver(){running=false;saveRun();const best=Number(localStorage.getIt
 function showTitle(){showOverlay('裂隙幸存者','俯视角生存肉鸽：移动躲避、自动攻击、收集经验、升级构筑。',[{label:'开始新一局',fn:()=>{reset();running=true;paused=false;$('overlay').classList.add('hide')}},{label:'继续本局',fn:()=>{if(!player)player={x:W/2,y:H/2,r:12};running=true;paused=false;$('overlay').classList.add('hide')}}])}
 function toast(msg){let old=$('toast');if(old)old.remove();const d=document.createElement('div');d.id='toast';d.textContent=msg;d.style.cssText='position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#f5f7ff;color:#111;padding:10px 14px;border-radius:99px;z-index:30;font-weight:800';document.body.appendChild(d);setTimeout(()=>d.remove(),1300)}
 $('startBtn').addEventListener('click',()=>{reset();running=true;paused=false;$('overlay').classList.add('hide')});
-$('continueBtn').addEventListener('click',()=>{if(!player)player={x:W/2,y:H/2,r:12};running=true;paused=false;$('overlay').classList.add('hide')});
+$('continueBtn').addEventListener('click',()=>{if(!player)player={x:W/2,y:H/2,r:12};loadRun();renderHud();running=true;paused=false;$('overlay').classList.add('hide')});
 window.addEventListener('keydown',e=>{keys[e.key]=true;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();if(e.key===' '&&dashCooldown<=0){dashTime=.18;dashCooldown=2.3}});
 window.addEventListener('keyup',e=>keys[e.key]=false);
 function setStick(e){const r=$('stick').getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let x=(e.clientX-cx)/(r.width*.37),y=(e.clientY-cy)/(r.height*.37),l=Math.hypot(x,y);if(l>1){x/=l;y/=l}stick.x=x;stick.y=y;$('knob').style.transform='translate('+x*30+'px,'+y*30+'px)'}
