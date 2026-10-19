@@ -70,4 +70,29 @@ function answer(ok){if(ok){awardQuest('语言解码：区分体验与证据',40)
 function awardQuest(label,amount=60){state.xp+=amount;state.log.push({t:label,r:'+'+amount+' XP'});save();toast('任务已记录 · +'+amount+' XP')}
 function resetDay(){if(!confirm('只重置今天的打卡和记录？累计经验会保留。'))return;state.done=[];state.log=[];save();toast('今日仪式已重置')}
 render();
+
+/* Mobile-browser fallback: delegate button actions instead of relying only on inline onclick. */
+document.addEventListener('click', function(event) {
+  const button = event.target.closest('button');
+  if (!button || button.disabled) return;
+  const action = button.getAttribute('onclick');
+  if (!action) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  try {
+    let m;
+    if ((m = action.match(/^startSession\('([^']+)'\)$/))) startSession(m[1]);
+    else if (action === 'nextStory()') nextStory();
+    else if (action === 'randomEvent()') randomEvent();
+    else if ((m = action.match(/^openQuest\('([^']+)'\)$/))) openQuest(m[1]);
+    else if ((m = action.match(/^completeSession\('([^']+)'\)$/))) completeSession(m[1]);
+    else if ((m = action.match(/^answer\((true|false)\)$/))) answer(m[1] === 'true');
+    else if ((m = action.match(/^awardQuest\('([^']+)'\)$/))) awardQuest(m[1]);
+    else if (action === 'resetDay()') resetDay();
+  } catch (err) {
+    console.error('Reality Overdrive action failed:', err);
+    toast('操作出错，请刷新页面后重试');
+  }
+}, true);
+
 </script></body></html>
