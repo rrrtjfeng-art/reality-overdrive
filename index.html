@@ -31,7 +31,7 @@
 <div class="section"><h2>任务日志</h2><button class="btn smallbtn" onclick="resetGame()">重新开档</button></div>
 <section class="panel"><div class="log" id="log"><div class="muted">尚无记录。做出第一个选择开始游戏。</div></div></section>
 <footer class="footer">所有金币、装备、倍率均为游戏内虚拟数据，不是真实收入。进度保存在当前浏览器；清除网站数据可能会删除存档。</footer>
-</main><button id="quickHome" class="home-float" onclick="hub()" aria-label="随时返回安全区">⌂ 返回安全区</button><div id="toast" class="toast"></div>
+</main><button id="quickHome" class="home-float" onclick="window.location.reload()" aria-label="刷新并返回安全区">⌂ 返回安全区（刷新）</button><div id="toast" class="toast"></div>
 <script>
 const $=id=>document.getElementById(id), KEY='reality-overdrive-rpg-v2';
 const fresh=()=>({day:1,xp:0,hp:100,maxhp:100,coins:120,power:8,actions:5,maxactions:5,clues:0,done:[],inventory:['旧式通讯器'],log:[],flags:{},storyStep:0});
