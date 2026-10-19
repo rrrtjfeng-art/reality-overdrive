@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080912">
+<title>REALITY OVERDRIVE — 现实超载</title>
+<style>
+:root{color-scheme:dark;--bg:#080912;--panel:#111321;--line:#292d43;--text:#f4f3ff;--muted:#a4a6c0;--violet:#a78bfa;--cyan:#67e8f9;--gold:#fbbf24;--pink:#f472b6}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 75% -10%,#31205e 0,transparent 42%),radial-gradient(ellipse at 0% 45%,#0c3042 0,transparent 40%),var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}button,textarea{font:inherit}button{cursor:pointer;color:inherit;border:1px solid var(--line);background:#1b1e31;border-radius:14px;padding:12px 15px;transition:.18s}button:active{transform:scale(.98)}button:disabled{opacity:.42;cursor:not-allowed}.wrap{max-width:900px;margin:auto;padding:20px 16px 60px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-size:12px;letter-spacing:.22em;color:var(--cyan);font-weight:800}.pill{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px}.hero{padding:36px 0 22px}.eyebrow{color:var(--violet);font-size:12px;letter-spacing:.2em;font-weight:800}.hero h1{font-size:clamp(38px,10vw,72px);line-height:.98;letter-spacing:-.06em;margin:12px 0 18px;max-width:760px}.hero h1 span{color:var(--cyan)}.lead{color:#c6c7db;max-width:640px;font-size:17px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.stat,.panel,.slot{border:1px solid var(--line);background:linear-gradient(145deg,#17192aeb,#0f111dee);border-radius:20px;padding:16px}.stat strong{display:block;font-size:25px;letter-spacing:-.04em}.stat small{color:var(--muted)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:28px 0 12px}.sectionhead h2{margin:0;font-size:22px}.sectionhead p{margin:0;color:var(--muted);font-size:12px}.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.slot{padding:14px;min-height:176px;position:relative;overflow:hidden}.slot:before{content:"";position:absolute;width:100px;height:100px;right:-35px;top:-40px;border-radius:50%;background:var(--glow,#a78bfa);filter:blur(50px);opacity:.4}.slot h3{margin:8px 0 3px;font-size:17px}.slot p{font-size:13px;color:var(--muted);min-height:40px;margin:0 0 13px}.slot .time{font-size:11px;letter-spacing:.13em;color:var(--glow,#a78bfa)}.slot button{width:100%;font-size:13px;padding:10px 6px;background:#22243a}.slot.done{border-color:#4b956f;background:linear-gradient(145deg,#11271f,#111321)}.slot.done button{color:#a7f3d0;border-color:#285b43}.story{margin-top:14px;min-height:240px;position:relative;overflow:hidden;background:linear-gradient(120deg,#20163b,#111827 55%,#0b2630);border:1px solid #38304f;border-radius:24px;padding:24px}.story:after{content:"";position:absolute;inset:auto -50px -130px auto;width:250px;height:250px;border-radius:50%;background:radial-gradient(circle,#8b5cf6aa,transparent 70%);pointer-events:none}.story .tag{font-size:11px;letter-spacing:.16em;color:var(--cyan)}.story h2{font-size:26px;line-height:1.15;margin:10px 0}.story p{color:#d5d5e8;max-width:650px;white-space:pre-line}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.primary{background:linear-gradient(100deg,#7c3aed,#2563eb);border:0;font-weight:750}.secondary{background:#171a2a}.questgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.questgrid .panel h3{margin:0 0 7px}.questgrid .panel p{color:var(--muted);font-size:14px;margin:0 0 14px}.reward{color:var(--gold);font-weight:800}.log{display:grid;gap:8px}.logitem{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #25283a;padding:10px 0;font-size:14px}.logitem span:last-child{color:var(--gold);white-space:nowrap}.foot{margin-top:30px;color:#83859f;font-size:12px}.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#f4f3ff;color:#10111d;padding:12px 18px;border-radius:999px;font-weight:800;transition:.25s;z-index:10;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.tiny{font-size:12px;color:var(--muted)}@media(max-width:620px){.slots{grid-template-columns:1fr}.slot{min-height:auto}.slot p{min-height:0}.questgrid{grid-template-columns:1fr}.stats{gap:7px}.stat{padding:12px}.stat strong{font-size:21px}.hero{padding-top:28px}.story{padding:20px}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div class="brand">RO / REALITY OVERDRIVE</div><div class="pill" id="dateLabel">TODAY'S RUN</div></header>
+<section class="hero"><div class="eyebrow">YOUR WORLD. YOUR RULES. YOUR NEXT MOVE.</div><h1>现实之外，<br><span>继续超载。</span></h1><p class="lead">进入故事，接受高难度挑战，寻找隐藏路线。早、中、晚完成你的每日仪式，抽取随机倍率，逐步解锁一个越来越离奇的世界。</p></section>
+<section class="stats" aria-label="进度统计"><div class="stat"><strong id="xp">0 XP</strong><small>世界经验</small></div><div class="stat"><strong id="level">LV. 1</strong><small>探索等级</small></div><div class="stat"><strong id="streak">0 / 3</strong><small>今日仪式</small></div></section>
+<div class="sectionhead"><div><h2>每日三段仪式</h2><p>每天早、中、晚各一次；奖励只在本世界生效。</p></div></div>
+<section class="slots">
+<article class="slot" id="slot-morning" style="--glow:#fbbf24"><div class="time">01 / MORNING</div><h3>命运启动</h3><p>进入财富场景，挑战你的语言理解与信念。</p><button onclick="startSession('morning')">进入早间仪式 ↗</button></article>
+<article class="slot" id="slot-noon" style="--glow:#67e8f9"><div class="time">02 / MIDDAY</div><h3>极限突破</h3><p>推理、决策或现实创意任务。难度可能超出预期。</p><button onclick="startSession('noon')">进入午间仪式 ↗</button></article>
+<article class="slot" id="slot-night" style="--glow:#c084fc"><div class="time">03 / NIGHT</div><h3>秘密结算</h3><p>解锁隐藏剧情，争取稀有倍率与当日结局。</p><button onclick="startSession('night')">进入晚间仪式 ↗</button></article>
+</section>
+<section class="story" id="story"><div class="tag">INCOMING TRANSMISSION / 00:00</div><h2>你收到了一条没有发件人的消息。</h2><p>“有一扇门只会在你停止寻找出口时出现。”
+
+城市的所有大屏同时熄灭。你的手机上浮现一个陌生坐标，以及一句话：你要继续熟悉的路线，还是进入未知？</p><div class="actions"><button class="primary" onclick="nextStory()">进入未知世界</button><button class="secondary" onclick="randomEvent()">触发随机事件</button></div></section>
+<div class="sectionhead"><div><h2>高难度任务</h2><p>奖励经验与虚拟收藏，不是现实收入。</p></div></div>
+<section class="questgrid">
+<div class="panel"><h3>语言解码 / <span class="reward">+40 XP</span></h3><p>拆解一句看似深刻的话：它究竟提供了证据，还是只让人感觉确定？答对解锁隐藏档案。</p><button class="secondary" onclick="openQuest('language')">开始解码</button></div>
+<div class="panel"><h3>财富实验室 / <span class="reward">+60 XP</span></h3><p>选一个低成本、可验证的赚钱创意。你要找的是下一步实验，不是保证暴富的承诺。</p><button class="secondary" onclick="openQuest('wealth')">启动实验</button></div>
+</section>
+<div class="sectionhead"><div><h2>今日记录</h2><p>本机保存；清除浏览器数据会重置记录。</p></div><button class="secondary" onclick="resetDay()">重置今日</button></div>
+<section class="panel"><div id="log" class="log"><div class="tiny">你今天的故事还没有开始。</div></div></section>
+<footer class="foot">REALITY OVERDRIVE · 本地体验原型。显化剧情用于想象与自我探索；随机倍率仅是虚拟游戏奖励，不代表真实财富结果。</footer>
+</main><div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const now=new Date();const dayKey=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+$('dateLabel').textContent=dayKey+' / DAILY RUN';
+const key='ro-state-v1';let state;try{state=JSON.parse(localStorage.getItem(key)||'null')}catch(e){}
+if(!state||state.day!==dayKey)state={day:dayKey,xp:state?.xp||0,streak:0,done:[],log:[],unlocks:[]};
+const scenes=[
+['午夜交易所','你走进一座不存在于地图上的交易所。没有人问你来自哪里，所有屏幕却都显示着同一个数字：0。门后的声音说：“真正昂贵的东西，不会先告诉你价格。”'],
+['云端顶层','私人电梯穿过云层，停在第 188 层。玻璃墙外是整座城市。桌上有一封信：你可以得到一个答案，但必须先说出你真正想问的问题。'],
+['隐藏拍卖会','一张黑色邀请函出现在你的口袋。地下拍卖会正在出售记忆、时间和从未发生过的未来。主持人把一枚筹码推到你面前。'],
+['第零号房间','你打开房门，却发现里面和你的房间一模一样。唯一不同的是墙上的钟正在倒走。镜子里的人先开口：“你终于来了。”'],
+['私人航站楼','凌晨的航站楼空无一人。屏幕显示三个目的地：自由、未知、归零。广播提醒你，登机后无法选择熟悉的路线。']
+];
+const events=[
+['稀有信号','一面墙突然亮起：隐藏倍率已出现。你获得了一枚虚拟的「裂隙碎片」。'],
+['剧情反转','你以为自己在追逐奖励，实际上你一直在解开一道问题。下一扇门已开启。'],
+['神秘来客','一个戴银色面具的人把一张卡片放在桌上：“真正的挑战不是相信，而是看清自己为什么相信。”'],
+['隐藏房间','墙面无声地向两侧滑开。里面只有一张椅子和一道问题，等待你亲自回答。']
+];
+const multipliers=[{m:1,p:.7},{m:2,p:.2},{m:5,p:.08},{m:10,p:.018},{m:50,p:.002}];
+function save(){localStorage.setItem(key,JSON.stringify(state));render()}
+function render(){ $('xp').textContent=state.xp+' XP';$('level').textContent='LV. '+(1+Math.floor(state.xp/150));$('streak').textContent=state.done.length+' / 3';['morning','noon','night'].forEach(k=>{let el=$('slot-'+k);let done=state.done.includes(k);el.classList.toggle('done',done);el.querySelector('button').textContent=done?'✓ 今日已完成':'进入'+({morning:'早间',noon:'午间',night:'晚间'}[k])+'仪式 ↗';el.querySelector('button').disabled=done});$('log').innerHTML=state.log.length?state.log.slice().reverse().map(x=>'<div class="logitem"><span>'+esc(x.t)+'</span><span>'+esc(x.r)+'</span></div>').join(''):'<div class="tiny">你今天的故事还没有开始。</div>'}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function toast(s){let t=$('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+function weighted(){let n=Math.random(),sum=0;for(const x of multipliers){sum+=x.p;if(n<sum)return x.m}return 1}
+function startSession(k){if(state.done.includes(k))return;let names={morning:'命运启动',noon:'极限突破',night:'秘密结算'};let prompts={
+morning:'你站在一扇巨大的黑色玻璃门前。门上刻着：财富可以是数字，也可以是你不再被迫出售的时间。\n\n问题：如果财富自由不是一句口号，你今天最想摆脱的一个具体限制是什么？请先在心里说出真实答案。',
+noon:'警报响起。你面前有三条路线：A. 看起来回报巨大但无法验证；B. 回报较小但能在 48 小时内测试；C. 继续搜集信息，不做决定。\n\n高难度选择：你要选哪条？请解释你会用什么证据判断它，而不是只凭兴奋感。',
+night:'午夜的大厅只亮着一盏灯。今天发生的一切被投影在墙上，但投影里混进了一段并未发生的未来。\n\n问题：今天哪个想法让你感觉最确定？它是事实、推测，还是你希望发生的事？分清它们，你就能打开下一道门。'
+};$('story').innerHTML='<div class="tag">DAILY RITUAL / '+k.toUpperCase()+'</div><h2>'+names[k]+'</h2><p>'+prompts[k]+'</p><div class="actions"><button class="primary" onclick="completeSession(\''+k+'\')">完成挑战并抽取倍率</button><button class="secondary" onclick="nextStory()">换一段剧情</button></div>'}
+function completeSession(k){if(state.done.includes(k))return;const m=weighted(),base={morning:35,noon:50,night:45}[k],gain=base*m;state.done.push(k);state.xp+=gain;state.log.push({t:({morning:'早间仪式',noon:'午间仪式',night:'晚间仪式'}[k]),r:m+'× · +'+gain+' XP'});if(state.done.length===3){state.xp+=75;state.log.push({t:'三段连击奖励',r:'+75 XP · 隐藏结算解锁'})}save();let special=m>=10?'稀有倍率命中！':m>=5?'触发高倍率奖励！':'挑战完成。';$('story').innerHTML='<div class="tag">REWARD UNLOCKED</div><h2>'+special+'</h2><p>倍率：'+m+'×\n获得经验：+'+gain+' XP'+(state.done.length===3?'\n三段连击完成：额外 +75 XP。秘密结局已解锁。':'')+'\n\n记住：这是游戏内的虚拟奖励，不代表真实资金增长。</p><div class="actions"><button class="primary" onclick="randomEvent()">继续探索</button><button class="secondary" onclick="nextStory()">打开新场景</button></div>';toast(m+'× 倍率 · +'+gain+' XP')}
+function nextStory(){const s=scenes[Math.floor(Math.random()*scenes.length)];$('story').innerHTML='<div class="tag">WORLD SHIFT / RANDOM SCENE</div><h2>'+s[0]+'</h2><p>'+s[1]+'</p><div class="actions"><button class="primary" onclick="randomEvent()">触发突发事件</button><button class="secondary" onclick="nextStory()">再跳转一次</button></div>'}
+function randomEvent(){const e=events[Math.floor(Math.random()*events.length)];const m=weighted();$('story').innerHTML='<div class="tag">ANOMALY DETECTED</div><h2>'+e[0]+'</h2><p>'+e[1]+'\n\n本次随机虚拟掉落：'+m+'×。探索本身不会产生真钱。</p><div class="actions"><button class="primary" onclick="nextStory()">继续深入</button><button class="secondary" onclick="openQuest(\'language\')">挑战语言谜题</button></div>';if(m>=5)toast('稀有事件：'+m+'× 虚拟掉落')}
+function openQuest(type){if(type==='language'){$('story').innerHTML='<div class="tag">HIGH DIFFICULTY / LANGUAGE DECODE</div><h2>识别确定感的陷阱</h2><p>“我强烈感觉这件事一定会发生，所以它一定会发生。”\n\n哪一种判断最严谨？</p><div class="actions"><button class="secondary" onclick="answer(false)">A. 感觉越强，事实越确定</button><button class="secondary" onclick="answer(true)">B. 感觉是真实体验，但不是外部结果的证据</button><button class="secondary" onclick="answer(false)">C. 只要反复想象，结果就有保证</button></div>'}else{$('story').innerHTML='<div class="tag">REAL-WORLD WEALTH LAB</div><h2>把刺激变成可验证的实验</h2><p>挑一个你可以用手机在 48 小时内完成的小实验：\n\n1. 做一份可售的数字资料样稿；\n2. 调研一种自动化工具的真实需求；\n3. 制作一个交易策略记录模板，并验证它解决什么问题。\n\n选一个你能验证需求、成本和下一步的方向。不要先把可能收入当成已经赚到的钱。</p><div class="actions"><button class="primary" onclick="awardQuest('选择并定义一个48小时实验')">记录为我的现实任务</button><button class="secondary" onclick="nextStory()">暂时探索剧情</button></div>'}}
+function answer(ok){if(ok){awardQuest('语言解码：区分体验与证据',40);$('story').innerHTML='<div class="tag">CODE ACCEPTED / SECRET ARCHIVE</div><h2>你识别出了陷阱。</h2><p>感受可以影响注意力与行动，但不能单独证明外部结果。隐藏档案已解锁：把想象当作体验，把证据当作证据。</p><div class="actions"><button class="primary" onclick="nextStory()">进入隐藏路线</button></div>'}else{$('story').innerHTML='<div class="tag">ACCESS DENIED</div><h2>再读一次线索。</h2><p>强烈的感觉是真实的主观体验，但它并不自动证明未来一定会发生。试着区分感受与证据。</p><div class="actions"><button class="primary" onclick="openQuest(\'language\')">重试解码</button></div>'}}
+function awardQuest(label,amount=60){state.xp+=amount;state.log.push({t:label,r:'+'+amount+' XP'});save();toast('任务已记录 · +'+amount+' XP')}
+function resetDay(){if(!confirm('只重置今天的打卡和记录？累计经验会保留。'))return;state.done=[];state.log=[];save();toast('今日仪式已重置')}
+render();
+</script></body></html>
